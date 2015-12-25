@@ -146,6 +146,10 @@ mark {
   background: #ff0;
 }
 
+bgblack {
+  background: #000000;
+}
+
 /**
  * Address inconsistent and variable font size in all browsers.
  */
