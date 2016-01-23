@@ -1,74 +1,88 @@
-<html>
-<head>
-	<title>Supersized - Full Screen Background/Slideshow jQuery Plugin</title>
-	<script type="text/javascript" src="http://jqueryjs.googlecode.com/files/jquery-1.3.1.js"></script>
-	<script type="text/javascript" src="https://github.com/zmey94/india/blob/gh-pages/javascripts/supersized.js"></script>
-	<script type="text/javascript">
-	
-	$(function(){
-		$.fn.supersized.options = {  
-			startwidth: 1024,  
-			startheight: 768,
-			minsize: .50,
-			slideshow: 1,
-			slideinterval: 5000  
-		};
-        $('#supersize').supersized(); 
-    });
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html idmmzcc-ext-docid="1091888087040" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head profile="http://gmpg.org/xfn/11">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="description" content="Personal site of Maxim Balabin - art director and photograper">
+<meta name="keywords" content="maxim balabin, zvooq, russia, afisha">
+<meta name="expires" content="never">
+<meta name="language" content="english">
+<meta name="distribution" content="Global">
+<meta name="copyright" content="2011 Maxim Balabin">
+<title>Flickr</title>
+<link rel="stylesheet" href="https://github.com/zmey94/india/blob/gh-pages/stylesheets/css/supersized.css" type="text/css" media="screen">
+<script type="text/javascript" src="https://github.com/zmey94/india/blob/gh-pages/javascripts/jquery.js"></script>
+<script type="text/javascript" src="https://github.com/zmey94/india/blob/gh-pages/javascripts/fade.js"></script>
+<link href="https://github.com/zmey94/india/blob/gh-pages/stylesheets/css/css.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="https://github.com/zmey94/india/blob/gh-pages/javascripts/supersized.js"></script>
 
-</script>
-		
+<script type="text/javascript">
+		jQuery(function($){
+			$.supersized({
+				//Functionality
+				slideshow               :   1,		//Slideshow on/off
+				autoplay				:	0,		//Slideshow starts playing automatically
+				start_slide             :   1,		//Start slide (0 is random)
+				random					: 	1,		//Randomize slide order (Ignores start slide)
+				slide_interval          :   5000,	//Length between transitions
+				transition              :   6, 		//0-None, 1-Fade, 2-Slide Top, 3-Slide Right, 4-Slide Bottom, 5-Slide Left, 6-Carousel Right, 7-Carousel Left
+				transition_speed		:	750,	//Speed of transition
+				new_window				:	0,		//Image links open in new window/tab
+				pause_hover             :   0,		//Pause slideshow on hover
+				keyboard_nav            :   1,		//Keyboard navigation on/off
+				performance				:	2,		//0-Normal, 1-Hybrid speed/quality, 2-Optimizes image quality, 3-Optimizes transition speed // (Only works for Firefox/IE, not Webkit)
+				image_protect			:	1,		//Disables image dragging and right click with Javascript
+				image_path				:	'img/', //Default image path
+				//Size & Position
+				min_width		        :   0,		//Min width allowed (in pixels)
+				min_height		        :   0,		//Min height allowed (in pixels)
+				vertical_center         :   1,		//Vertically center background
+				horizontal_center       :   1,		//Horizontally center background
+				fit_portrait         	:   1,		//Portrait images will not exceed browser height
+				fit_landscape			:   1,		//Landscape images will not exceed browser width  
+				//Components
+				navigation              :   0,		//Slideshow controls on/off
+				thumbnail_navigation    :   0,		//Thumbnail navigation
+				slide_counter           :   0,		//Display slide numbers
+				slide_captions          :   0,		//Slide caption (Pull from "title" in slides array)
+				//Flickr
+				source					:	1,						//1-Set, 2-User, 3-Group
+				set                     :   '72157626955422906', 				//Flickr set ID (found in URL)  72157627525901208
+				user					:	'19327998@N00',				//Flickr user ID (http://idgettr.com/)
+				group					:	'######', 				//Flickr group ID (http://idgettr.com/)
+				total_slides			:	300,					//How many pictures to pull (Between 1-500) 250
+				image_size              :   'b', 					//Flickr Image Size - t,s,m,z,b  (Details: http://www.flickr.com/services/api/misc.urls.html)
+				/**
+	    		FLICKR API KEY
+	    		NEED TO GET YOUR OWN -- http://www.flickr.com/services/apps/create/
+	    		**/
+				api_key					:	'7a3769f28a1d3efb7db26a5af9ebc198'		//Flickr API Key
+			}); 
+		});
 	</script>
-	<style type="text/css">
-		*{
-			margin:0;
-			padding:0;
-			font:60px "Gotham Black", Arial, sans-serif;
-			color:#FFF;
-		}
-		img{
-			border:none;
-		}
-		body {
-			overflow:hidden;/*Needed to eliminate scrollbars*/
-		}
-		#content{
-			margin:0px auto;
-			height:100px;
-			width:100%;
-			bottom:5%;
-			background-color:#262626;
-			border-top:3px solid #4F4F4F;
-			border-bottom:3px solid #4F4F4F;
-			position:absolute;
-		}
-		#contentframe{
-			text-align:center;
-		}
-		
-		/*Supersize Plugin Styles*/
-		#supersize img, #supersize a{
-			height:100%;
-			width:100%;
-			display:none;
-		}
-		#supersize .activeslide, #supersize .activeslide img{
-			display:inline;
-		}
-
-	</style>
 </head>
-
-<body>
-
-<div id="supersize">
-	<a class="activeslide" href="http://interfacelift.com/wallpaper_beta/details/1789/bright_ideas.html"><img  src="https://pbs.twimg.com/media/CZZt7dsWYAAHAyQ.jpg"/></a>
-	<a href="http://interfacelift.com/wallpaper_beta/details/1787/eye_on_the_world.html"><img src="https://pbs.twimg.com/media/CZZt1MBWAAAqajB.jpg"/></a>
+<body><div style="display: block;" class="quality" id="supersized"><a class="prevslide" style="display: block; left: -1024px;"><img style="width: 1024px; height: 768px; left: 0px; top: -67.5px;" src="Asocial%20Network%20Corp_files/10509419406_ac25d54688_b.jpg"></a><a class="activeslide" style="display: block; left: 0px;"><img style="width: 1024px; height: 675.84px; left: 0px; top: -21.5px;" src="Asocial%20Network%20Corp_files/1708727462_611579e0a8_b.jpg"></a><a><img style="width: 1024px; height: 675.84px; left: 0px; top: -21.5px;" src="Asocial%20Network%20Corp_files/5893522532_7dd44227b9_b.jpg"></a></div><div style="display: none;" id="supersized-loader"></div>
+	<div style="display: none;" id="profileview">
+		<div class="wrapper clearfix">
+			<div class="profiledescription">
+				<h2>Maxim Balabin &amp; Asocial Networks love you</h2>
+			</div>
+			<a style="display: none;" href="#" class="closeprofile">↑</a>
+		</div>
+		<!-- End of wrapper -->
+	</div>
+<div id="fullscreen" style="opacity: 0.5; display: none;">
+</div>	
+<div class="profileactive" id="profile">
+	<p>
+		<a href="#">&lt;&gt;</a>
+	</p>
+	<div class="keysTip" style="opacity: 1; "><div class="keysTip_text">Use ← arrow keys → to expand your horizons</div></div>
 </div>
-
-<div id="content">
-	<div id="contentframe"><a href="http://buildinternet.com/2009/02/supersized-full-screen-backgroundslideshow-jquery-plugin"><img src="images/supersizedblack.gif"/></a></div>
-</div>
+<script src="https://github.com/zmey94/india/blob/gh-pages/javascripts/urchin.js" type="text/javascript">
+	</script>
+<script type="text/javascript">
+	_uacct = "UA-2002869-1";
+	urchinTracker();
+	</script>
 
 </body>
 </html>
