@@ -1,0 +1,199 @@
+/* Supersized - Fullscreen Slideshow jQuery Plugin Flickr Edition 1.1.2 
+www.buildinternet.com/project/supersized By Sam Dunn / One Mighty Roar (www.onemightyroar.com) 
+Released under MIT License / GPL License*/
+
+* {
+	margin:0;
+	padding:0;
+}
+body {
+	background:#111;
+	font-size:100%;
+	font-family:'Goudy Bookletter 1911',Serif;
+	color:#222;
+	height:100%;
+	background:gray;
+}
+img {
+	border:none;
+}
+
+html {
+	height:100%
+}
+
+.wrapper {
+	margin:0 auto;
+	width:720px;
+	position:relative
+}
+.bubble {
+	display: none;
+}
+
+#profileview {
+	clear:both;
+	height:200px;
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	z-index:100;
+	background:black;
+	display:none
+}
+
+#fullscreen {
+	width:100%;
+	height:100%;
+	background:#000;
+	position:fixed;
+	opacity:0.5;
+	display:none;
+	z-index:99;
+	top:0;
+	right:0
+}
+
+.profiledescription h2 {
+	margin:0;
+	padding:90px 0 0 0;
+	line-height:10px;
+	font-size:30px;
+	color:white;
+	font-weight:normal;
+	text-align:center;
+}
+
+#profileview .wrapper {
+	height:100%
+}
+
+#profile a {
+		font-size:10pt;
+		padding:5px 8px;
+		color:white;
+		text-decoration:none;
+		position:absolute; 
+		top:50px; 
+		left:50px; 
+		background:#111; 
+		background:rgba(0,0,0,0.65); 
+		width:40px; 
+		text-align:center; 
+		-webkit-border-radius:5px;
+		-moz-border-radius:5px; 
+		border-radius:5px;
+	}
+
+.clear {
+	clear:both
+}
+
+.closeprofile {
+
+	background-color:#fff;
+	padding:8px 1px 8px;
+	color:#000;
+	font-size:25px;
+	font-family:Arial;
+	-webkit-border-radius:13px;
+	-moz-border-radius:13px;
+	line-height:10px;
+	text-decoration:none;
+	position:absolute;
+	bottom:-50px;
+	left:360px;
+	display:none
+}
+
+#supersized-loader {
+	position:absolute;
+	top:50%;
+	left:50%;
+	z-index:10;
+	width:20px;
+	height:20px;
+	margin:-30px 0 0 -30px;
+	text-indent:-999em;
+	background-color:#111;
+	background:rgba(0,0,0,0.65) url(../img/ajax-loader.gif) no-repeat center center;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	border-radius:5px;
+}
+#supersized {
+	position:fixed;
+	left:0;
+	top:0;
+	overflow:hidden;
+	z-index:-999;
+	height:100%;
+	width:100%;
+}
+#supersized img {
+	position:relative;
+	display:none;
+	outline:none;
+	border:none;
+}
+#supersized.speed img {
+	-ms-interpolation-mode:nearest-neighbor;
+	image-rendering: -moz-crisp-edges;
+}
+/*Speed*/
+#supersized.quality img {
+	-ms-interpolation-mode:bicubic;
+	image-rendering: optimizeQuality;
+}
+/*Quality*/
+#supersized a {
+	z-index:-30;
+	position:absolute;
+	overflow:hidden;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	background:#111;
+}
+#supersized a.prevslide {
+	z-index:-20;
+}
+#supersized a.activeslide {
+	z-index:-10;
+}
+#supersized a.prevslide img,#supersized a.activeslide img {
+	display: inline;
+}
+.keysTip {
+	height:28px;
+	position:absolute;
+	width:370px;
+	top:50px; 
+	left:100px;
+}
+
+.keysTip_text {
+	bottom:0;
+	filter:alpha(opacity=0);
+	font-size:.8em;
+	left:15px;
+	opacity:0;
+	position:absolute;
+	-moz-transition:opacity .3s linear;
+	-ms-transition:opacity .3s linear;
+	-o-transition:opacity .3s linear;
+	-webkit-transition:opacity .3s linear;
+	transition:opacity .3s linear;
+	width:250px; 
+	padding:5px 10px;
+	background:rgba(255,255,255,0.9); 
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px; 
+	border-radius:5px
+}
+#profile:hover .keysTip_text {
+	filter:alpha(opacity=85);
+	opacity:.85
+}
