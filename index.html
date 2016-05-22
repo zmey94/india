@@ -12,14 +12,21 @@
 
     <title>gosha</title>
     
+     <style type="text/css">
+  #elements div{
+     display: none;
+  }
+  </style>
+  
     <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-    <script>
+     <script>
 $(function () {
 var divs = $('#elements div'), div;
 div = divs.eq(Math.floor(Math.random() * divs.length));
 div.show()
          });
     </script>
+
   </head>
 
   
