@@ -80,7 +80,7 @@ div.show()
 
 <script>
 function one() {
-    if(audio.paused){audio.play()}else{audio.pause()}
+    if(audio.paused){audio.play()}else{audio.pause(); document.getElementById('audio').currentTime = 0;} 
 }
 
 function two() {
