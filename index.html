@@ -105,9 +105,17 @@ function imgchange(){
 <audio id=mix>
 	<source type="audio/mpeg" src="http://gta-fan-zone.ru/_Maks__/vospominanija_o_dzheksone.mp3"></source>
 </audio>
-<a href="#mix" onclick="if(audio.mix.paused){audio.mix.play()}else{audio.mix.pause()}">Developer</a>
+<a href="#mix" onclick="mix_p_p()">I'm web Developer</a>
 
-
-
+<script>
+function mix_p_p() {
+  var mix = document.getElementById("mix");
+  if (mix.paused) {
+    mix.play();
+  } else {
+    mix.pause();
+  }
+}
+</script>
    </body>
 </html>
